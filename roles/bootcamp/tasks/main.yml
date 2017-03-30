@@ -1,0 +1,13 @@
+---
+- name: infoGatherHostname
+  setup: 
+    filter: "*hostname*"
+- name: infoGatherIPv4
+  debug:
+    var: ansible_default_ipv4.address
+- name: copyFile
+  copy: src="/tmp/doc" dest="/tmp/myfile1"
+- name: contentFile
+  copy:
+    content: "The content of the file"
+    dest: "/tmp/myfile2"
